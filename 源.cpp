@@ -1,15 +1,21 @@
 #include <iostream>
 using namespace std;
 int main()
-{int age;
-cin >> age;
-if (age < 18)
-	printf("未成年\n");
-else if (age >= 18 && age < 35)
-	printf("青年\n");
-else if (age >= 35 && age < 60)
-	printf("壮年\n");
-else
-printf("老年\n");
-return 0;
+{
+	int num;
+	cin >> num;
+	if (num < 18)
+	{
+		if (num >= 0 && num < 10)
+			printf("小学生\n");
+		else
+			printf("不能谈恋爱\n");
+	}
+	if (num >= 18)
+	{
+		printf("成年人\n");
+		printf("可以谈恋爱\n");
+	}
+		
+	return 0;
 }
