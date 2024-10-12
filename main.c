@@ -1,76 +1,77 @@
 #include <stdio.h>
-#include <math.h>
-double max(double a, double b ,double c)
+#include <stdlib.h>
+int lp(int a , int b)
 {
-    if( a>b && a>c)
+    while(b != 0)
     {
-        return a;
+        int c;
+        c = b;
+        b = a % b;
+        a = c;
     }
-    if( b>a && b>c)
-    {
-        return b;
-    }
-    else
-    {
-        return c;
-    }
-}
-double min(double d , double e , double f)
-{
-    if( d<e && d<f)
-    {
-        return d;
-    }
-    if( e<d && e<f)
-    {
-        return e;
-    }
-    else
-    {
-        return f;
-    }
-}
-double lp(double i)
-{
-    return i / (255);
+    return a;
+
 }
 int main()
 {
-    double j , k , l , S , H , V , Q , san ,J , K , L;
-    scanf("%d %d %d",&J , &K , &L);
-    j = lp(J);
-    k = lp(K);
-    l = lp(L);
-    V = max(j , k , l);
-    Q = min(j , k , l);
-    san = V - Q;
-    if( V != 0)
+    int d , e , f , g , G1 , h , i , j , k , G2 , G3 ,G4;
+    scanf("%d/%d",&d,&e);
+    scanf("%d/%d",&f,&g);
+    G1 = e * g;
+    G3 = e * g;
+    G4 = e * g;
+    h = d * g + f *e;
+    if(lp(h,G1) != 0)
     {
-        S = san / V;
+        int n;
+        n = lp(h,G1);
+        G1 = G1 / n;
+        h = h / n;
+        printf("(%d/%d)+(%d/%d)=%d/%d\n",d,e,f,g,h,G1);
     }
-    if( V == 0)
+    else
     {
-        S = 0;
+        printf("(%d/%d)+(%d/%d)=%d/%d\n",d,e,f,g,h,G1);
     }
-    if( V == j)
+    i = d * g - f * e;
+    if(lp(i,G3) != 0)
     {
-        H = 60 * ( k - l) / san;
+        int m;
+        m = lp(i,G3);
+        G3 = G3 / m;
+        i = i / m;
+       printf("(%d/%d)-(%d/%d)=%d/%d\n",d,e,f,g,i,G3);
     }
-    if( V == k)
+    else
     {
-        H = 120 + 60 * (l - j) / san;
+        printf("(%d/%d)-(%d/%d)=%d/%d\n",d,e,f,g,i,G3);
     }
-    if( V == l)
+    j = d * f;
+    if(lp(j,G4) != 0)
     {
-        H = 240 + 60 * ( j - k) / san;
+        int v;
+        v = lp(j,G4);
+        G4 = G4 / v;
+        j = j / v;
+        printf("(%d/%d)*(%d/%d)=%d/%d\n",d,e,f,g,j,G4);
     }
-    if( H < 0)
+    else
     {
-        H += 360;
+       printf("(%d/%d)*(%d/%d)=%d/%d\n",d,e,f,g,j,G4);
     }
-    S = S * 100;
-    V = V * 100;
-    printf("%.4lf,%.4lf%%,%.4lf%%",H,S,V);
+    G2 = e * f;
+    k = d * g;
+    if(lp(k,G2) != 0)
+    {
+        int x;
+        x = lp(k,G2);
+        G2 = G2 / x;
+        k = k / x;
+       printf("(%d/%d)/(%d/%d)=%d/%d\n",d,e,f,g,k,G2);
+    }
+    else
+    {
+        printf("(%d/%d)/(%d/%d)=%d/%d\n",d,e,f,g,k,G1);
+    }
     return 0;
 }
-
